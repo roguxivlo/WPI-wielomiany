@@ -1,6 +1,7 @@
 /**
  * 
- * ZADANIE ZALICZENIOWE 1 - KALKULATOR WIELOMIANÓW;
+ * @file Wielomiany.c
+ * @brief Kalkulator wielomianów.
  * 
  * PROGRAM WCZYTUJE CIĄG POLECEŃ SKŁADAJĄCYCH SIĘ ZE ZNAKU OPERACJI
  * ORAZ ZAPISU WIELOMIANU;
@@ -15,9 +16,8 @@
  * 
  * ZAKŁADAMY ŻE WSPÓŁCZYNNIKI MIESZCZĄ SIĘ W TYPIE INT;
  * 
- * AUTOR: JAN ROGUWSKI
- * NR INDEKSU 440002
- * 22 LISTOPADA 2021 R.
+ * @author JAN ROGUWSKI <jroguwski@gmail.com>
+ * @date 2021
  * 
  * **/
 
@@ -50,6 +50,16 @@ typedef int WIELOMIAN[ROZMIAR];
  * WCZYTYWANIE DANYCH
  * 
  * */
+
+/*
+Gramatyka opisująca wielomiany:
+<wielomian> ::= "0" | [ "-" ] <jednomian> { <operacja> <jednomian> }
+<operacja> ::= "+" | "-"
+<jednomian> ::= "1" | <dużo> | [ <dużo> ] "x" [ "^" <dużo> ]
+<dużo> ::= "1" <cyfra> { <cyfra> } | <cyfra od 2 do 9> { <cyfra> }
+<cyfra> ::= "0" | "1" | <cyfra od 2 do 9>
+<cyfra od 2 do 9> ::= "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+*/
 
 /*
 Funkcja ustawia współczynniki wielomianu w na 0;
